@@ -141,7 +141,7 @@ app.put('/api/update/:id', validateData, (req, res) => {
                     'error': 'Client was not found'
                 });
             }
-            
+
             await docRef.update({ 
                 name: req.body.name || doc.data().name,
                 surname: req.body.surname || doc.data().surname,
@@ -165,7 +165,7 @@ app.put('/api/update/:id', validateData, (req, res) => {
 
 /**
  * DELETE route to delete data in firestore through an id
- * @name DELETE/api/update/:id
+ * @name DELETE/api/delete/:id
  * @function
  * @param {Object} req 
  * @param {Object} res 
