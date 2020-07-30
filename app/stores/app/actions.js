@@ -1,4 +1,4 @@
-import { ADD_USER, SET_USER, SET_USER_LIST } from './types';
+import { ADD_USER, SET_USER, DELETE_USER, SET_USER_LIST } from './types';
 
 export const setUser = user => dispatch => dispatch({
   type: SET_USER,
@@ -14,5 +14,12 @@ export const addNewUser = user => dispatch => {
   dispatch({
     type: ADD_USER,
     payload: user,
+  });
+};
+
+export const deleteUser = id => dispatch => {
+  dispatch({
+    type: DELETE_USER,
+    payload: id,
   });
 };
