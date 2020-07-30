@@ -31,6 +31,7 @@
         "alias": {
           "map": [
             ["@API", "./pages/api"],
+            ["@Connected-Components", "./connected-components"],
             ["@Components", "./components"],
             ["@Hooks", "./hooks"],
             ["@Pages", "./pages"],
@@ -54,6 +55,8 @@
       "object-curly-newline": 0,
       "operator-linebreak": 0,
       "consistent-return": 0,
-      "arrow-parens": 0
+      "arrow-parens": 0,
+      "react/prefer-stateless-function": 0,
+      "jsx-a11y/label-has-associated-control": 0
     }
   }
