@@ -80,7 +80,7 @@ app.get('/api/read/:id', (req, res) => {
             const doc = await docRef.get();
             if(!doc.exists){
                 return res.status(404).send({
-                    'error': 'Client was not found'
+                    'error': 'User was not found'
                 }); 
             }
             return res.status(200).send(doc.data());
@@ -137,7 +137,7 @@ app.put('/api/update/:id', validateData, (req, res) => {
             const doc = await docRef.get();
             if(!doc.exists){
                 return res.status(404).send({
-                    'error': 'Client was not found'
+                    'error': 'User was not found'
                 });
             }
 
@@ -178,7 +178,7 @@ app.delete('/api/delete/:id', (req, res) => {
             const doc = await docRef.get();
             if(!doc.exists){
                 return res.status(404).send({
-                    'error': 'Client was not found'
+                    'error': 'User was not found'
                 });
             }
 
