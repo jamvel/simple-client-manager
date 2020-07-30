@@ -1,29 +1,13 @@
-import { createStore, combineReducers, compose } from 'redux';
-import { createWrapper, HYDRATE } from 'next-redux-wrapper';
+import { createStore, compose, applyMiddleware } from 'redux';
+import { createWrapper } from 'next-redux-wrapper';
+import thunk from 'redux-thunk';
+import reducer from './app/reducer';
 
-// create your reducer
-const reducer = (state = {}, action) => {
-  switch (action.type) {
-    case HYDRATE:
-      return { ...state, ...action.payload };
-    default:
-      return state;
-  }
-};
-const reducer2 = (state = {}, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
 // create a makeStore function
 const makeStore = () => createStore(
-  combineReducers({
-    reducer,
-    reducer2,
-  }),
-  {},
+  reducer,
   compose(
+    applyMiddleware(thunk),
     typeof window !== 'undefined' && window.devToolsExtension ? window.devToolsExtension() : (f) => f,
   ),
 );
