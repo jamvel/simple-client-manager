@@ -3,6 +3,7 @@ const endpoints = require('./endpoints.json');
 
 module.exports = {
     env: {
+        axiosBaseUrl: 'http://localhost:3000',
         ...endpoints
     },
     webpack: (config, { dev }) => {
