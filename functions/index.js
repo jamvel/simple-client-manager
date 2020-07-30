@@ -8,8 +8,7 @@ const serviceAccount = require('./service-account.json');
 const COLLECTION = 'users';
 
 admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://fir-users-api.firebaseio.com"
+    credential: admin.credential.cert(serviceAccount)
 });
 
 const firestore = admin.firestore();
