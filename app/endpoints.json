@@ -1,0 +1,7 @@
+{
+    "ENDPOINT_CREATE": "http://localhost:5001/fir-users-api/eur3/app/api/create",
+    "ENDPOINT_READ": "http://localhost:5001/fir-users-api/eur3/app/api/read/",
+    "ENDPOINT_READALL": "http://localhost:5001/fir-users-api/eur3/app/api/read-all",
+    "ENDPOINT_UPDATE": "http://localhost:5001/fir-users-api/eur3/app/api/update/",
+    "ENDPOINT_DELETE": "http://localhost:5001/fir-users-api/eur3/app/api/delete/"
+}
