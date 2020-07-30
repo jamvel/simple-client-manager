@@ -38,7 +38,7 @@ UserListCard.propTypes = {
   region: PropTypes.string,
   country: PropTypes.string.isRequired,
   postCode: PropTypes.string.isRequired,
-  contact: PropTypes.number.isRequired,
+  contact: PropTypes.string.isRequired,
 };
 
 UserListCard.defaultProps = {
