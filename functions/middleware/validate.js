@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /**
  * Verify and Validate body data middleware
  * 
