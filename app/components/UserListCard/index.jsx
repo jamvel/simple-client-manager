@@ -2,48 +2,48 @@ import PropTypes from 'prop-types';
 import style from './style.module.css';
 
 const UserListCard =
-({ name, surname, address1, address2, town, region, country, postCode, contact }) => (
+({ user, editFn, deleteFn }) => (
   <div className={style.cardParent}>
     <div className={style.cardUser}>
       <span>
-        {name}&nbsp;{surname}
+        {user.name}&nbsp;{user.surname}
       </span>
       <div>
-        <span>{address1}</span>
-        <span>{address2}</span>
+        <span>{user.address1}</span>
+        <span>{user.address2}</span>
       </div>
       <div>
-        <span>{town}</span>
-        <span>{region}</span>
-        <span>{country}</span>
-        <span>{postCode}</span>
+        <span>{user.town}</span>
+        <span>{user.region}</span>
+        <span>{user.country}</span>
+        <span>{user.postCode}</span>
       </div>
       <div>
-        <span>{contact}</span>
+        <span>{user.contact}</span>
       </div>
     </div>
     <div className={style.buttonsParent}>
-      <button type="button">Edit</button>
-      <button type="button">Delete</button>
+      <button type="button" onClick={() => editFn()}>Edit</button>
+      <button type="button" onClick={() => deleteFn(user.id)}>Delete</button>
     </div>
   </div>
 );
 
 UserListCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  surname: PropTypes.string.isRequired,
-  address1: PropTypes.string.isRequired,
-  address2: PropTypes.string,
-  town: PropTypes.string.isRequired,
-  region: PropTypes.string,
-  country: PropTypes.string.isRequired,
-  postCode: PropTypes.string.isRequired,
-  contact: PropTypes.string.isRequired,
-};
-
-UserListCard.defaultProps = {
-  address2: '',
-  region: '',
+  user: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    surname: PropTypes.string.isRequired,
+    address1: PropTypes.string.isRequired,
+    address2: PropTypes.string.isRequired,
+    town: PropTypes.string.isRequired,
+    region: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    postCode: PropTypes.string.isRequired,
+    contact: PropTypes.string.isRequired,
+  }).isRequired,
+  editFn: PropTypes.func.isRequired,
+  deleteFn: PropTypes.func.isRequired,
 };
 
 export default UserListCard;
