@@ -12,7 +12,7 @@ const UserForm = ({ user, submitFn }) => {
     town: '',
     region: '',
     country: '',
-    postCodeeeee: '',
+    postCode: '',
     contact: '',
   });
 
