@@ -21,6 +21,7 @@ module.exports = {
 		*/
 		config.resolve.alias['@API'] = path.join(__dirname, 'pages/api');
         config.resolve.alias['@Components'] = path.join(__dirname, 'components');
+        config.resolve.alias['@Connected-Components'] = path.join(__dirname, 'connected-components');
         config.resolve.alias['@Hooks'] = path.join(__dirname, 'hooks');
         config.resolve.alias['@Pages'] = path.join(__dirname, 'pages');
         config.resolve.alias['@Public'] = path.join(__dirname, 'public');
