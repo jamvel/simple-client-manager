@@ -14,7 +14,7 @@ const UserList = ({ users, deleteFn }) => {
   const router = useRouter();
   return (
     <>
-      {users && Array.isArray(users) && users.length > 0 && (
+      {users && Array.isArray(users) && users.length > 0 ? (
         <div className={style.listParent}>
           {users.map((user) => (
             <UserListCard
@@ -25,6 +25,8 @@ const UserList = ({ users, deleteFn }) => {
             />
           ))}
         </div>
+      ) : (
+        <div className={style.noUsers}>No users found!</div>
       )}
     </>
   );
