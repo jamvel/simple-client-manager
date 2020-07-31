@@ -84,8 +84,8 @@ const UserForm = ({ user, submitFn }) => {
         <input type="text" name="contact" value={allValues.contact || ''} onChange={handleChange} />
       </label>
 
-      <div>
-        <button type="button" onClick={() => (dataIsValid() ? submitFn(allValues) : alert('Error: Please check your input'))}>Save</button>
+      <div className={style.buttonsParent}>
+        <button type="button" className="btn btn-primary" onClick={() => (dataIsValid() ? submitFn(allValues) : alert('Error: Please check your input'))}>Save</button>
         <Link href="/">
           <button className="btn btn-cancel" type="button">Go Back</button>
         </Link>

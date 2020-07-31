@@ -15,6 +15,17 @@
 
 .form input {
   width: 90%;
-  margin-bottom: 1em;
+  margin-bottom: .7em;
+  margin-right: 2em;
+  padding: .5em;
+  border: 1px solid grey;
+  border-radius: 0.2em;
+}
+
+.buttonsParent{
+  margin-top: 1em;
+}
+
+.buttonsParent > button:first-child {
   margin-right: 2em;
 }
