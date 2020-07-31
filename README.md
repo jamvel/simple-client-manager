@@ -3,7 +3,7 @@
 ## Firebase API
 
 The firebase API code is located in the functions folder.\
-**A service-account.json file is required to be placed in the root of the function directory, so that it connects to the Firestore**
+**A service-account.json file is required to be placed in the root of the function directory, so that it connects to Firestore Services**
 
 To serve the firebase API locally run :
 ```bash
