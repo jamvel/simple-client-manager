@@ -3,6 +3,13 @@ import { useRouter } from 'next/router';
 import UserListCard from '@Components/UserListCard';
 import style from './style.module.css';
 
+/**
+ * User List component that displays UserListCard components
+ * @component
+ * @function UserList
+ * @param {Object[]} users - Array of user objects with the data
+ * @param {deleteFn} callback - Function to call when the delete button is clicked
+ */
 const UserList = ({ users, deleteFn }) => {
   const router = useRouter();
   return (

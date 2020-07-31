@@ -31,7 +31,7 @@ class User extends React.Component {
    * If the update is successful then an action is dispatched to update the redux store with the user data
    * @async
    * @function updateExistingUser
-   * @param {object} user - The user object with all the data
+   * @param {Object} user - The user object with all the data
    */
   async updateExistingUser(user) {
     const { updateUserRx } = this.props;
