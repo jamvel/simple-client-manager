@@ -5,26 +5,31 @@ const UserListCard =
 ({ user, editFn, deleteFn }) => (
   <div className={style.cardParent}>
     <div className={style.cardUser}>
-      <span>
+
+      <div className={style.row1}>
         {user.name}&nbsp;{user.surname}
-      </span>
-      <div>
-        <span>{user.address1}</span>
-        <span>{user.address2}</span>
       </div>
-      <div>
-        <span>{user.town}</span>
-        <span>{user.region}</span>
-        <span>{user.country}</span>
-        <span>{user.postCode}</span>
+
+      <div className={style.row2}>
+        <span><span className={style.label}>Address 1</span>{user.address1}</span>
+        <span><span className={style.label}>Address 2</span>{user.address2 || '-'}</span>
       </div>
-      <div>
-        <span>{user.contact}</span>
+
+      <div className={style.row3}>
+        <span><span className={style.label}>Town</span>{user.town}</span>
+        <span><span className={style.label}>Region</span>{user.region || '-'}</span>
+        <span><span className={style.label}>Country</span>{user.country}</span>
+        <span><span className={style.label}>Post Code</span>{user.postCode}</span>
+      </div>
+
+      <div className={style.row4}>
+        <span><span className={style.label}>Contact Number</span>{user.contact}</span>
       </div>
     </div>
+
     <div className={style.buttonsParent}>
-      <button type="button" onClick={() => editFn()}>Edit</button>
-      <button type="button" onClick={() => deleteFn(user.id)}>Delete</button>
+      <button type="button" className="btn btn-edit" onClick={() => editFn()}>Edit</button>
+      <button type="button" className="btn btn-delete" onClick={() => deleteFn(user.id)}>Delete</button>
     </div>
   </div>
 );
