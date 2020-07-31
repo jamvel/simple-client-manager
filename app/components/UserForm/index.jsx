@@ -21,6 +21,8 @@ const UserForm = ({ user, submitFn }) => {
 
   const dataIsValid = () => Object.values(validData).every(x => x === true);
 
+  const getBorderColor = valid => (valid ? 'grey' : 'red');
+
   useEffect(() => {
     if (user) {
       setAllValues({ ...user });
@@ -37,51 +39,51 @@ const UserForm = ({ user, submitFn }) => {
         <div>
           <label>
             Name
-            <input type="text" name="name" value={allValues.name || ''} onChange={handleChange} />
+            <input type="text" name="name" value={allValues.name || ''} onChange={handleChange} style={{ borderColor: getBorderColor(validData.name) }} />
           </label>
         </div>
 
         <div>
           <label>
             Surname
-            <input type="text" name="surname" value={allValues.surname || ''} onChange={handleChange} />
+            <input type="text" name="surname" value={allValues.surname || ''} onChange={handleChange} style={{ borderColor: getBorderColor(validData.surname) }} />
           </label>
         </div>
       </div>
 
       <label>
         Address 1
-        <input type="text" name="address1" value={allValues.address1 || ''} onChange={handleChange} />
+        <input type="text" name="address1" value={allValues.address1 || ''} onChange={handleChange} style={{ borderColor: getBorderColor(validData.address1) }} />
       </label>
 
       <label>
         Address 2
-        <input type="text" name="address2" value={allValues.address2 || ''} onChange={handleChange} />
+        <input type="text" name="address2" value={allValues.address2 || ''} onChange={handleChange} style={{ borderColor: getBorderColor(validData.address2) }} />
       </label>
 
       <label>
         Town
-        <input type="text" name="town" value={allValues.town || ''} onChange={handleChange} />
+        <input type="text" name="town" value={allValues.town || ''} onChange={handleChange} style={{ borderColor: getBorderColor(validData.town) }} />
       </label>
 
       <label>
         Region
-        <input type="text" name="region" value={allValues.region || ''} onChange={handleChange} />
+        <input type="text" name="region" value={allValues.region || ''} onChange={handleChange} style={{ borderColor: getBorderColor(validData.region) }} />
       </label>
 
       <label>
         Country
-        <input type="text" name="country" value={allValues.country || ''} onChange={handleChange} />
+        <input type="text" name="country" value={allValues.country || ''} onChange={handleChange} style={{ borderColor: getBorderColor(validData.country) }} />
       </label>
 
       <label>
         Post Code
-        <input type="text" name="postCode" value={allValues.postCode || ''} onChange={handleChange} />
+        <input type="text" name="postCode" value={allValues.postCode || ''} onChange={handleChange} style={{ borderColor: getBorderColor(validData.postCode) }} />
       </label>
 
       <label>
         Contact Number
-        <input type="text" name="contact" value={allValues.contact || ''} onChange={handleChange} />
+        <input type="text" name="contact" value={allValues.contact || ''} onChange={handleChange} style={{ borderColor: getBorderColor(validData.contact) }} />
       </label>
 
       <div className={style.buttonsParent}>
