@@ -2,8 +2,8 @@ import axios from 'axios';
 /**
  * @name GET/api/read-all
  * @function
- * @param {Object} req 
- * @param {Object} res 
+ * @param {Object} req
+ * @param {Object} res
  */
 export default async (req, res) => {
   try {
