@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import useValidateData from '@Hooks/useValidateData';
 import style from './style.module.css';
 
 const UserForm = ({ user, submitFn }) => {
@@ -15,6 +16,10 @@ const UserForm = ({ user, submitFn }) => {
     postCode: '',
     contact: '',
   });
+
+  const validData = useValidateData(allValues);
+
+  const dataIsValid = () => Object.values(validData).every(x => x === true);
 
   useEffect(() => {
     if (user) {
@@ -80,7 +85,7 @@ const UserForm = ({ user, submitFn }) => {
       </label>
 
       <div>
-        <button type="button" onClick={() => submitFn(allValues)}>Save</button>
+        <button type="button" onClick={() => (dataIsValid() ? submitFn(allValues) : alert('Error: Please check your input'))}>Save</button>
         <Link href="/">
           <button className="btn btn-cancel" type="button">Go Back</button>
         </Link>
