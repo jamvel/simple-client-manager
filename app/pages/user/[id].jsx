@@ -11,6 +11,10 @@ import Wrapper from '@Stores';
 
 import { connect } from 'react-redux';
 
+/**
+ * User page for an existing user
+ * @component User
+ */
 class User extends React.Component {
   constructor(props) {
     super(props);
@@ -22,6 +26,13 @@ class User extends React.Component {
     this.updateExistingUser = this.updateExistingUser.bind(this);
   }
 
+  /**
+   * Function calls api/update to request an update to the user data
+   * If the update is successful then an action is dispatched to update the redux store with the user data
+   * @async
+   * @function updateExistingUser
+   * @param {object} user - The user object with all the data
+   */
   async updateExistingUser(user) {
     const { updateUserRx } = this.props;
     try {
@@ -34,7 +45,7 @@ class User extends React.Component {
       this.setState({
         error: true,
       });
-      console.log(e) // eslint-disable-line
+      console.log(e); // eslint-disable-line no-console
     }
   }
 
@@ -43,6 +54,7 @@ class User extends React.Component {
     const { rxUser, id, error: notFoundError } = this.props;
     return (
       <>
+        {/* if notFoundError is true (this.props.error) then the read request was a fail during getServerSideProps so display the Error Page */}
         {notFoundError && (
           <>
             <Head>
@@ -56,6 +68,7 @@ class User extends React.Component {
         </Head>
         <main>
           <h1>Edit User</h1>
+          {/* Pass the redux connected prop user and the bound function updateExistingUser to the UserForm */}
           <UserForm
             user={rxUser}
             submitFn={this.updateExistingUser}
@@ -82,8 +95,14 @@ User.defaultProps = {
   error: undefined,
 };
 
+/**
+ * Next.js function that fetches data on each request
+ * Wrapper is used to connect the function to the redux store
+ * @function getServerSideProps
+ */
 export const getServerSideProps = Wrapper.getServerSideProps(
   async ({ store, res, query }) => {
+    /** [id] request parameter is available under req.query.id (@link https://nextjs.org/docs/api-routes/dynamic-api-routes) */
     const { id } = query;
     try {
       const { data } = await axios.get(`/api/read/${id}`);
