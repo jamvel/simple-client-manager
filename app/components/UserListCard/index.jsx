@@ -1,8 +1,15 @@
 import PropTypes from 'prop-types';
 import style from './style.module.css';
 
-const UserListCard =
-({ user, editFn, deleteFn }) => (
+/**
+ * User Card to be display user data
+ * @component
+ * @function UserListCard
+ * @param {Object} user - The user object with data
+ * @param {editFn} callback - Function to call when the edit button is clicked
+ * @param {deleteFn} callback - Function to call when the delete button is clicked
+ */
+const UserListCard = ({ user, editFn, deleteFn }) => (
   <div className={style.cardParent}>
     <div className={style.cardUser}>
 

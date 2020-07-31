@@ -4,6 +4,13 @@ import PropTypes from 'prop-types';
 import useValidateData from '@Hooks/useValidateData';
 import style from './style.module.css';
 
+/**
+ * User List component that displays UserListCard components
+ * @component
+ * @function UserForm
+ * @param {Object} users - User object with data
+ * @param {submitFn} callback - Function to call when the submit button is clicked
+ */
 const UserForm = ({ user, submitFn }) => {
   const [allValues, setAllValues] = useState({
     name: '',
@@ -17,18 +24,36 @@ const UserForm = ({ user, submitFn }) => {
     contact: '',
   });
 
+  // use useValidateData custom hook
   const validData = useValidateData(allValues);
 
+  /**
+   * Checks validData (from useValidateData hook) to see if all the values in the object are true
+   * @function dataIsValid
+   * @returns {boolean}
+   */
   const dataIsValid = () => Object.values(validData).every(x => x === true);
 
+  /**
+   * Returns color depending on value of param
+   * @function getBorderColor
+   * @param {boolean} valid
+   * @returns {string}
+   */
   const getBorderColor = valid => (valid ? 'grey' : 'red');
 
+  // useEffect hook to populate data on mount
   useEffect(() => {
     if (user) {
       setAllValues({ ...user });
     }
   }, [setAllValues]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  /**
+   * Function to call to handle change in form
+   * @function handleChange
+   * @param {Object} e - Event object
+   */
   const handleChange = e => {
     setAllValues({ ...allValues, [e.target.name]: e.target.value });
   };
