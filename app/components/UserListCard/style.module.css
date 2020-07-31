@@ -4,7 +4,7 @@
     align-self: center;
     flex-direction: row;
     width: 90%;
-    padding: 1em;
+    padding: 0.8em;
     margin-bottom: 1em;
     border-radius: 1em;
     box-shadow: 0 3px 6px 2px rgba(0,0,0,0.16);
@@ -19,10 +19,47 @@
     max-width: 90%;
 }
 
+.cardUser div:not(:last-child) {
+    margin-bottom: 3px;
+}
+
+.cardUser div > span{
+    margin-right: 1em;
+}
+
+.label{
+    font-size: 0.5em;
+    color: gray;
+    margin-right: 5px;
+}
+
+.row1{
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.row2, .row3, .row4 {
+    display: flex;
+    font-size: 0.9em;
+}
+
+.row2 > span, .row3 > span, .row4 > span {
+    display: flex;
+    align-items: center;
+}
+
 .buttonsParent{
     display: flex;
     flex-direction: column;
     padding: 0 1em;
+}
+
+.buttonsParent button{
+    width: 130px;
+}
+
+.buttonsParent > button:first-child{
+    margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -33,5 +70,10 @@
 
     .buttonsParent {
         margin-top: 0.5em;
+    }
+
+    .buttonsParent button{
+        width: 90%;
+        margin: 0 auto;
     }
 }

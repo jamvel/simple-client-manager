@@ -41,3 +41,15 @@ a {
   background: yellow;
   font-weight: bold;
 }
+
+.btn-edit {
+  background: lightseagreen;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-delete {
+  background: maroon;
+  color: white;
+  font-weight: bold;
+}
