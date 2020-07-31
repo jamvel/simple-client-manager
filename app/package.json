@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ./components/** ./pages/** -c .eslintrc.json --ext js,jsx"
+    "lint": "eslint ./hooks/** ./components/** ./pages/** ./stores/** ./stores/** -c .eslintrc.json --ext js,jsx"
   },
   "dependencies": {
     "axios": "^0.19.2",
