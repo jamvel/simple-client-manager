@@ -1,5 +1,18 @@
 import { useEffect, useState } from 'react';
-
+/**
+ * User List component that displays UserListCard components
+ * @function useValidateData
+ * @param {string} name
+ * @param {string} surname
+ * @param {string} address1
+ * @param {string} address2
+ * @param {string} town
+ * @param {string} region
+ * @param {string} country
+ * @param {string} postCode
+ * @param {string} contact
+ * @returns {Object[]} - Returns object with boolean values to indicate whether or not data is valid
+ */
 const useValidateData = ({ name, surname, address1, address2, town, region, country, postCode, contact }) => { // eslint-disable-line max-len
   const [validName, setValidName] = useState(false);
   const [validSurname, setValidSurname] = useState(false);
