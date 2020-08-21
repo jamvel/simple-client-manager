@@ -45,7 +45,7 @@ class NewUser extends React.Component {
     return (
       <>
         <Head>
-          <title>HAUD Task- New User</title>
+          <title>New User</title>
         </Head>
         <main>
           <h1>Add New User</h1>
