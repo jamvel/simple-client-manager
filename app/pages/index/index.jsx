@@ -48,11 +48,11 @@ class Home extends React.Component {
     return (
       <>
         <Head>
-          <title>HAUD Task- User List</title>
+          <title>User List</title>
         </Head>
         <main>
           <div className={style.header}>
-            <h1>HAUD TASK - User List</h1>
+            <h1>User List</h1>
             <Link href="/user/new">
               <button
                 type="button"

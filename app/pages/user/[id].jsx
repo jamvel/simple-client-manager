@@ -58,13 +58,13 @@ class User extends React.Component {
         {notFoundError && (
           <>
             <Head>
-              <title>HAUD Task- User not found</title>
+              <title>User not found</title>
             </Head>
             <ErrorPage statusCode={notFoundError.statusCode} />
           </>
         )}
         <Head>
-          <title>HAUD Task- User {id}</title>
+          <title>User {id}</title>
         </Head>
         <main>
           <h1>Edit User</h1>
