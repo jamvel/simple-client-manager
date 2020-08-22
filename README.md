@@ -1,4 +1,4 @@
-# Firebase-Next.js-SimpleClientManager
+# SimpleClientManager
 
 A simple client manager built with Next.js, Redux, Firebase Cloud Functions and Firestore
 
